@@ -1,0 +1,53 @@
+.TodoListItem{
+    padding-left:5px;
+    display:flex;
+    align-items: center;
+    &:nth-child(even){
+        background : transparent;
+    }
+    .checkbox{
+        cursor: cursor;
+        flex:1;
+        display:flex;
+        align-items: center;
+        font-size : 22px;
+        svg{ // svg : 웹에서 로고,아이콘, 일러스트 이미지 등을 사용하면 svg를 사용해서 최소 용량으로 편집할 수 있습니다. 2차원그래픽을 표현하기위해 만들어진 xml형태의 언어.
+            //icon
+            font-size: 30px;
+        }
+        .text{
+            margin-left: 10px;
+            flex: 1;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            color:darkslategray;
+        }
+        &.checked{
+            svg{
+                color:palevioletred;
+            }
+            .text{
+                color:gray;
+                text-decoration: line-through;
+            }
+        }
+    }
+    .remove{
+        outline: none;
+        border: none;
+        display: flex;
+        align-items:center;
+        font-size: 30px;
+        color: palevioletred;
+        transition : 0.2s background ease-in-out;
+        padding: 10px;
+        cursor:pointer;
+        &:hover{
+            background:#add8e6;
+        }
+    }
+     //엘리먼트 사이사이의 테두리
+    &+&{
+        border-top :1px solid #add8e6;
+    }
+}
