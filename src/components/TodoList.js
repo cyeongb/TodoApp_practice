@@ -2,10 +2,13 @@ import React from 'react';
 import TodoListItem from './TodoListItem';
 import './TodoList.scss';
 
-const TodoList = () => {
+const TodoList = ({ todos }) => {
+  //todos : App.js에서 props로 전달된 것
   return (
     <div className="TodoList">
-      <TodoListItem />
+      {todos.map((todo) => (
+        <TodoListItem todo={todo} key={todo.id} />
+      ))}
     </div>
   );
 };
